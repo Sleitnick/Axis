@@ -42,7 +42,7 @@ local MyProvider = require(somewhere.MyProvider) -- Grab the other provider
 
 local AnotherProvider = {}
 
-function ANotherProvider:AxisPrepare()
+function AnotherProvider:AxisPrepare()
 	-- Other providers are NOT safe to use here, because there's no guarantee
 	-- that they have all been prepared yet. Wait until AxisStarted.
 end
