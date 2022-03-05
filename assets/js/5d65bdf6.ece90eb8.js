@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[283],{97868:function(s){s.exports=JSON.parse('{"sourceUrl":"https://github.com/Sleitnick/Axis/blob/master","baseUrl":"/Axis/","classOrder":[],"apiCategories":[]}')}}]);
