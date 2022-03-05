@@ -1,5 +1,6 @@
 [![CI](https://github.com/Sleitnick/Axis/actions/workflows/ci.yaml/badge.svg)](https://github.com/Sleitnick/Axis/actions/workflows/ci.yaml)
 [![CD](https://github.com/Sleitnick/Axis/actions/workflows/cd.yaml/badge.svg)](https://github.com/Sleitnick/Axis/actions/workflows/cd.yaml)
+[![Docs](https://github.com/Sleitnick/Axis/actions/workflows/docs.yaml/badge.svg)](https://github.com/Sleitnick/Axis/actions/workflows/docs.yaml)
 
 # Axis
 
