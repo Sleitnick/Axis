@@ -1,0 +1,9 @@
+gitRepoUrl = "https://github.com/Sleitnick/Axis"
+
+[home]
+enabled = true
+includeReadme = false
+
+[docusaurus]
+tagline = "A provider framework for the Roblox ecosystem"
+favicon = "/favicon.png"
