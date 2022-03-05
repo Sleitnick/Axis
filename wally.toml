@@ -1,0 +1,9 @@
+[package]
+name = "sleitnick/axis"
+description = "A provider framework for the Roblox ecosystem"
+version = "0.1.0"
+license = "MIT"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+
+[dependencies]
