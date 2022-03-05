@@ -1,0 +1,43 @@
+name: CD
+
+on:
+  push:
+    tags:
+      - "v*"
+  
+jobs:
+  build:
+    name: Upload Release Asset
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install foreman
+        uses: Roblox/setup-foreman@v1
+        with:
+          version: "^1.0.0"
+          token: ${{ SECRETS.GITHUB_TOKEN }}
+      - name: Publish release to Wally
+        shell: bash
+        env:
+          WALLY_AUTH: ${{ secrets.WALLY_AUTH }}
+        run: |
+          mkdir -p ~/.wally
+          echo "$WALLY_AUTH" > ~/.wally/auth.toml
+          wally publish
+      - name: Build model file
+        run: |
+          rojo build -o Axis.rbxm
+      - name: Get version
+        id: get_version
+        run: echo ::set-output name=VERSION::${GITHUB_REF#refs/tags/}
+      - name: Changelog
+        run: python3 last_changelog.py CHANGELOG.md > log.md
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: Release ${{ steps.get_version.outputs.VERSION }}
+          body_path: log.md
+          fail_on_unmatched_files: true
+          files: |
+            Axis.rbxm
