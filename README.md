@@ -1,3 +1,6 @@
+[![CI](https://github.com/Sleitnick/Axis/actions/workflows/ci.yaml/badge.svg)](https://github.com/Sleitnick/Axis/actions/workflows/ci.yaml)
+[![CD](https://github.com/Sleitnick/Axis/actions/workflows/cd.yaml/badge.svg)](https://github.com/Sleitnick/Axis/actions/workflows/cd.yaml)
+
 # Axis
 
 Axis is a provider framework for the Roblox ecosystem.
