@@ -93,3 +93,25 @@ MyProvider.AxisExtensions = {
 ```
 
 Extensions will run in the order of which they were added. Axis-level extensions run before provider-level extensions.
+
+## Memory categories
+
+Because Axis providers are started from one source, the default memory label within the Developer Console will appear the same for all providers. To solve this, Axis will automatically assign a memory category if the `AxisName` field is set.
+
+```lua
+local MyProvider = {}
+
+MyProvider.AxisName = "MyProvider"
+```
+
+When MyProvider is prepared/started, any memory usage will show up within the MyProvider label in the Developer Console memory section.
+
+If the script being used to bootstrap Axis is grabbing each provider from its own ModuleScript, then a simple way to inject this is to set the `AxisName` property to the ModuleScript's name. For example:
+
+```lua
+for _,module in ipairs(somewhere.MyProviderModules:GetChildren()) do
+	local provider = require(module)
+	provider.AxisName = module.Name -- Inject name
+	Axis:AddProvider(provider)
+end
+```
