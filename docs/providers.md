@@ -77,4 +77,4 @@ return MyProvider
 
 ## Avoid Strong Coupling
 
-Coupling occurs when pieces of code require other pieces of code. Such dependencies are unavoidable in many use-cases. However, providers are designed to be top-level singletons. As such, they should be design as standalone as possible. While there are definitely cases where providers will need to access other providers (hence the lifecycle methods existing in the first place), it is better to design around such necessities.
+Coupling occurs when pieces of code require other pieces of code. Such dependencies are unavoidable in many use-cases. However, providers are designed to be top-level singletons. As such, they should be designed as standalone as possible. While there are definitely cases where providers will need to access other providers (hence the lifecycle methods existing in the first place), it is better to design around such necessities.
