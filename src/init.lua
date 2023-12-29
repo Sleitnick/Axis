@@ -276,7 +276,8 @@ end
 	```
 ]=]
 function Axis:AwaitStart()
-	if not self._Started then return end
+	if self._Started then return end
+
 	table.insert(self._Awaiting, coroutine.running())
 	coroutine.yield()
 end
@@ -292,7 +293,7 @@ end
 	```
 ]=]
 function Axis:OnStart(callback: () -> ())
-	if not self._Started then
+	if self._Started then
 		task.spawn(callback)
 		return
 	end
